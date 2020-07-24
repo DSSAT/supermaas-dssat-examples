@@ -29,11 +29,11 @@ For the purposes of this documentation, the following directory structure is ass
 
 ```
 .
-├── baseline 
+├── baseline
 ├── data
 │   ├── base
 │   ├── ethiopia
-│   └── weather 
+│   └── weather
 ├── forecast
 ├── includes
 ├── outputs
@@ -60,7 +60,7 @@ docker build -t supermaas-dssat-eth-baseline -f baseline/Dockerfile .
 
 ```
 docker run --rm  -it -v ${PWD}/data:/data -v ${PWD}/outputs:/outputs supermaas-dssat-eth-baseline --all /userdata/eth_maize_baseline.json
-``` 
+```
 
 ## Outputs
 
