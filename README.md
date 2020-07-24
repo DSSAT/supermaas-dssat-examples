@@ -16,7 +16,7 @@ This repository contains what _could_ be the results of multiple model registrat
 
 * `baseline` - The baseline model to which all other models in this example set should be compared against. Contains 4 management practices (irrigated/high nitrogen inputs, rainfed high N, rainred low N, rainfed 0N).
 * `subsidy` - An example of multiple fertilizer subsidies, which is additional fertilizer compared to the baseline. values are 10,25,50 kg/ha.
-* `forecast` - An example of running a forecast (in this case a backcast based on 2018 data which proxy years from 1984-2017).
+* `forecast` - An example of running a forecast (in this case a backcast based on 2018 data with proxy years from 1984-2017).
 * `suitability` - An example of planting Teff where Maize is grown. Uses the (unregistered) Teff model base and replaces the rasters for harvest area to the Maize areas.
 
 The `includes` directory is custom cultivar files which would be provided by the Expert Modeler.
