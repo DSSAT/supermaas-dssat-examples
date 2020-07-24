@@ -62,4 +62,13 @@ docker build -t supermaas-dssat-eth-baseline -f baseline/Dockerfile .
 docker run --rm  -it -v ${PWD}/data:/data -v ${PWD}/outputs:/outputs supermaas-dssat-eth-baseline --all /userdata/eth_maize_baseline.json
 ``` 
 
+## Outputs
+
 All outputs are generated in the `outputs/` directory. Each image has a different output directory underneath `outputs/` in this example. The csv file at the `outputs/<image>/` directory is a trimmed and aggregated file of all the CSV files underneath each directory.
+
+## Future Thoughts
+
+* In order to simplify the execution of the model, the JSON files could technically be named the same in each directory.
+* There needs to be a dynamic way to give the desired `cores` and `threads`.
+* This assumes that the Expert Modeler is setting up the baseline conditions prior to indicating which procedures (subsidy, forecasting, etc.) should be shimmed into the JSON file.
+* Currently, these are all just JSON files with minor differences between them. There _should_ be a way to take the differences and abstract them into the procedures.
