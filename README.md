@@ -1,6 +1,6 @@
 # SuperMaaS Example Containers for DSSAT-pythia
 
-These are the *Expert Modeler* supplied files and the Dockerfiles used to run [DSSAT-pythia](https://github.com/DSSAT/pythia/tree/develop, "DSSAT-pythia development branch").
+These are the *Expert Modeler* supplied files and the Dockerfiles used to run [DSSAT-pythia](https://github.com/DSSAT/pythia/tree/develop "DSSAT-pythia development branch").
 
 ## Prerequisites
 
@@ -44,18 +44,22 @@ For the purposes of this documentation, the following directory structure is ass
 ## Customizing the JSON files
 
 Because we don't know the parameters of the system running DSSAT-pythia, the following should be modified inside the JSON file prior to building the image.
-`cores` - Number of cores to use
-`threads` - Number of threads to use (_Some testing has shown that using 1/2 cores for threads works most efficiently_)
-`sample` - Number of valid pixels to run per management. (_This can be removed to run the whole country_)
+* `cores` - Number of cores to use
+* `threads` - Number of threads to use (_Some testing has shown that using 1/2 cores for threads works most efficiently_)
+* `sample` - Number of valid pixels to run per management. (_This can be removed to run the whole country_)
 
 ## Building the images
 
 For these examples, we can execute `docker build` from within the above directory structure.
 
-`docker build -t supermaas-dssat-eth-baseline -f baseline/Dockerfile .`
+```
+docker build -t supermaas-dssat-eth-baseline -f baseline/Dockerfile .
+```
 
 ## Executing the images
 
-`docker run --rm  -it -v ${PWD}/data:/data -v ${PWD}/outputs:/outputs supermaas-dssat-eth-baseline --all /userdata/eth_maize_baseline.json` 
+```
+docker run --rm  -it -v ${PWD}/data:/data -v ${PWD}/outputs:/outputs supermaas-dssat-eth-baseline --all /userdata/eth_maize_baseline.json
+``` 
 
-All outputs are generated in the `outputs/` directory. Each image has a different output directory underneath outputs in this example. The csv file at the `outputs/<image>/` directory is a trimmed and aggregated file of all the CSV files underneath each directory.
+All outputs are generated in the `outputs/` directory. Each image has a different output directory underneath `outputs/` in this example. The csv file at the `outputs/<image>/` directory is a trimmed and aggregated file of all the CSV files underneath each directory.
